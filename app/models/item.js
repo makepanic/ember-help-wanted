@@ -9,6 +9,13 @@ export default DS.Model.extend({
   rating:       DS.attr(),
   workingOn:    DS.attr(),
 
+  descriptionLink: Ember.computed('description', 'link', function() {
+    let descriptionValue = Ember.Handlebars.Utils.escapeExpression(this.get('description'));
+    let linkValue = Ember.Handlebars.Utils.escapeExpression(this.get('link'));
+
+    return Ember.String.htmlSafe(`<a href="${linkValue}" target="_blank">${descriptionValue}</a>`);
+  }),
+
   workingOnLink: Ember.computed('workingOn', function() {
 
     // todo: let's clean this up! ;-) possibly move it into a custom transform

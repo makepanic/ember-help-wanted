@@ -1,0 +1,48 @@
+{{#light-table table as |t|}}
+  {{t.head}}
+
+  {{#t.body as |body|}}
+    {{#body.expanded-row as |row|}}
+      Hello <b>{{row.firstName}}</b>
+    {{/body.expanded-row}}
+
+    {{#if isLoading}}
+      {{#body.loader}}
+        Loading...
+      {{/body.loader}}
+    {{/if}}
+
+    {{#if table.isEmpty}}
+      {{#body.no-data}}
+        No hitlist items found.
+      {{/body.no-data}}
+    {{/if}}
+  {{/t.body}}
+{{/light-table}}
+
+{{!--
+<table>
+  <thead>
+  <tr>
+    <th>Rating</th>
+    <th>Category</th>
+    <th>Project</th>
+    <th>Description</th>
+    <th>Notes</th>
+    <th>Working On</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each items as |item|}}
+    <tr>
+      <td>{{item.rating}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.project}}</td>
+      <td></td>
+      <td>{{item.notes}}</td>
+      <td>{{item.workingOnLink}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+--}}

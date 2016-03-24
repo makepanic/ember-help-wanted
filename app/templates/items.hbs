@@ -1,27 +1,4 @@
 <p>The items below could all use some love and attention.  Please, grab one!</p>
-<table>
-  <thead>
-    <tr>
-      <th>Rating</th>
-      <th>Category</th>
-      <th>Project</th>
-      <th>Description</th>
-      <th>Notes</th>
-      <th>Working On</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model as |item|}}
-    <tr>
-      <td>{{item.rating}}</td>
-      <td>{{item.category}}</td>
-      <td>{{item.project}}</td>
-      <td><a href="{{item.link}}" target="_blank">{{item.description}}</a></td>
-      <td>{{item.notes}}</td>
-      <td>{{item.workingOnLink}}</td>
-    </tr>
-  {{/each}}
-  </tbody>
-</table>
+{{items-table items=model}}
 
 {{outlet}}
