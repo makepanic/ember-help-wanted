@@ -7,7 +7,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: { 'connect-src': "'self'" },
     emberPouch:{
       localDb:'ember-help-local',
-      //remoteDb: 'http://xxx'
+      remoteDb: 'https://mesependersedowsteredgai:9ecae715ccfd0c831caa2839a43abf25ef3bc8b9@locks.cloudant.com/help-wanted'
     },
     baseURL: '/',
     locationType: 'auto',
